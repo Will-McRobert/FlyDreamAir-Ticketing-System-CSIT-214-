@@ -6,12 +6,6 @@ Django is a high-level Python web framework with a focus on simplifying and stre
 
 The following key features form the core of our FlyDreamAir Django web application:
 
-**Front end**
-- Django Template Language
-  - Integrates Python directly within HTML documents
-  - Provides a simple and effective method of interacting with and displaying data (e.g. flight bookings) on web pages
-
-**Back end**
 - Django Models 
   - Models serve as the definitive source of the application's data 
   - Each model serves as a database table, and are written as Python classes that can be accessed within the application
