@@ -1,1 +1,32 @@
 /* Main stylesheet definitions */
+.page{
+  background: color white;
+  border: 0;
+  display: block;
+}
+.mainmenu{
+  background-color: lightblue;
+  width: auto;
+  height: auto;
+  display: block;
+}
+.mainmenu-item{
+  background: color grey;
+  display: block;
+}  
+.tabs{
+  background-color: aquamarine;
+  border:1px solid whitesmoke;
+  padding: 5%;
+  display: block;
+}
+.carousel{
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+}
+img{
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+}
