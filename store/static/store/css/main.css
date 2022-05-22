@@ -1,44 +1,63 @@
-* {
-  font-family: Arial, Helvetica, sans-serif
-}
-body {
+body{
   margin: 0;
+  padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background: url("Bliss_4096x2160.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
-ul li{
-  list-style-type: none;
+a{
+  font-size: 15px;
+  text-transform: uppercase;
 }
-.mainmenu{
-  background-color: lightblue;
-  overflow: hidden;
-  height: auto;
+.nav-area{
+  background: lightblue;
+}
+.nav-area::after{
+  content: '';
+  clear: both;
+  display: block;
+}
+.nav-area ul{
+  list-style: none;
+  margin: 0;
+}
+.nav-area > ul > li{
+  float: right;
+  position: relative;
+}
+.nav-area ul li a{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 15px 20px;
+  display: block;
+}
+.nav-area ul li:hover a{
+  background: rgb(104, 202, 235);
+}
+.nav-area ul ul{
+  position: absolute;
+  padding: 0;
+  min-width: 160px;
+  display: none;
+  top: 100%;
+  left: 0;
+}
+.nav-area ul li:hover > ul{
+  display: block;
+}
+.nav-area ul ul li:hover a{
+  background: rgb(149, 209, 229);
+}
+.nav-area ul ul li{
+  position: relative;
 }
 .mainmenu-img{
   float: left;
   display: block;
-  height: 4rem;
+  height: 3rem;
   width: auto;
 }
-.mainmenu-item a{
-  float: right;
-  display: block;
-  text-align: center;
-  font-size: large;
-  padding: 25px 25px;
-  text-decoration: none;
-}
-.mainmenu-item :hover{
-  background-color: rgb(104, 202, 235);
-  color: black;
-}
-.carousel img{
-  width: 100%;
-  height: auto;
-}
-.tabs{
-  background-color: aquamarine;
-  padding: 5%;
-  display: block;
-}
-
-
