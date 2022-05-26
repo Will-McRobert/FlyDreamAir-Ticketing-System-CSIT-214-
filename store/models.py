@@ -1,16 +1,13 @@
 from django.db import models
-from django.db.models.signals import post_save
-
 
 # DB Model Definitions
+
 
 class Customer(models.Model):
     class Meta:
         db_table = "customer"
 
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    dob = models.DateField()
+    full_name = models.CharField(max_length=200)
     email = models.CharField(max_length=254, unique=True)
     phone_number = models.CharField(max_length=15, unique=True)
 
