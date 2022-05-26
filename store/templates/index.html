@@ -2,22 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static "store/css/main.css" %}">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li>{% load static %}
-                <img src="{% static "store/img/FlyDreamAir.png" %}" alt="FlyDreamAir Logo" style="height: 50px;">
-            </li>
-            <li><a href="#">Book</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Deals</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <ul>
+                <li>{% load static %}
+                    <img src="{% static "store/img/FlyDreamAir.png" %}" alt="FlyDreamAir Logo" style="height: 50px;">
+                </li>
+                <li><a href="/">Book</a></li>
+                <li><a href="#">News</a></li>`
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="booking-container">
+        <form action="flight-select" method="post">
+            {% csrf_token %}
+            <div id="booking-header">
+                <button id="book-flight-button" class="booking-button">Book a flight</button>
+                <button id="manage-booking-button" class="booking-button">Manage booking</button>
+            </div>
+            <div id="flight-booking-input-container">
+                <div id="flight-origin-container">
+                    <p>Fly From</p>
+                    <label>
+                        <input id="flight-origin-input" class="flight-location-input" type="text" placeholder="Airport/Location" name="origin-airport">
+                    </label>
+                    <div id="results-origin" style="background: white; border-radius: 5px; width: 350px;">
+                    </div>
+                </div>
+                <div style="margin-top: 30px">
+                    <img id="airplane-icon" src="{% static "store/img/Airplane.png" %}" alt="Airplane Icon" width="64px" height="64px" style="top: 100px">
+                </div>
+                <div id="flight-destination-container">
+                    <p>Fly To</p>
+                    <label>
+                        <input id="flight-destination-input" class="flight-location-input" type="text" placeholder="Airport/Location" name="destination-airport">
+                    </label>
+                    <div id="results-destination" style="background: white; border-radius: 5px; width: 350px; z-index: -1">
+                    </div>
+                </div>
+            </div>
+            <div style="justify-content: right; align-content: end">
+                <button id="select-dates-button" class="booking-button" type="submit">Select Dates 🠖</button>
+            </div>
+        </form>
+    </div>
+    <div id="featured-flights-header">
+            <h2>Featured flights from Sydney</h2>
+        </div>
+    <div id="featured-flights-container">
+        <br>
+        <div class="featured-flight">
+            <img class="featured-flight-img" src="{% static "store/img/Melbourne.jpg" %}" alt="Melbourne City" height="100px" width="100px">
+            <p>Melbourne</p>
+            <p>$86</p>
+        </div>
+        <div class="featured-flight">
+            <img class="featured-flight-img" src="{% static "store/img/Hobart.jpg" %}" alt="Melbourne City" height="100px" width="100px">
+            <p>Hobart</p>
+            <p>$109</p>
+        </div>
+        <div class="featured-flight">
+            <img class="featured-flight-img" src="{% static "store/img/GoldCoast.jpg" %}" alt="Melbourne City" height="100px" width="100px">
+            <p>Gold Coast</p>
+            <p>$65</p>
+        </div>
+        <div class="featured-flight">
+            <img class="featured-flight-img" src="{% static "store/img/Perth.jpg" %}" alt="Melbourne City" height="100px" width="100px">
+            <p>Perth</p>
+            <p>$92</p>
+        </div>
+        <div class="featured-flight">
+            <img class="featured-flight-img" src="{% static "store/img/Darwin.jpg" %}" alt="Melbourne City" height="100px" width="100px">
+            <p>Darwin</p>
+            <p>$102</p>
+        </div>
+    </div>
+    <script src="{% static "store/js/index.js" %}"></script>
 </body>
 </html>
