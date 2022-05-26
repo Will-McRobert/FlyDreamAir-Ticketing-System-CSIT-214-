@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make Payment</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "store/css/main.css" %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>{% load static %}
+                    <img src="{% static "store/img/FlyDreamAir.png" %}" alt="FlyDreamAir Logo" style="height: 50px;">
+                </li>
+                <li><a href="/">Book</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form method="post" action="ticket-confirmation">
+        <input type="number" name="seat-id" value="{{ selected_seat.id }}" hidden>
+        <div id="flight-booking-container" style="width: 40%; text-align: center; margin: auto">
+            <div style="text-align: center; margin:auto">
+                <h1 style="margin-bottom: 10px">Enter Passenger Details</h1>
+            </div>
+                <div id="flight-booking-input-container" style="display: block;  background: white; border-radius: 5px; border: solid #3FB7EA">
+                    <div id="flight-origin-container" style="text-align: center; margin-bottom: 30px">
+                        <p>Full Name</p>
+                        <label>
+                            <input id="flight-origin-input" class="flight-location-input" type="text" name="passenger-name" placeholder="e.g. Joe Swanson" style="text-align: center">
+                        </label>
+                    </div>
+                    <div id="flight-origin-container" style="text-align: center; margin-bottom: 30px">
+                        <p>Email</p>
+                        <label>
+                            <input id="flight-origin-input" class="flight-location-input" type="text" name="passenger-email" placeholder="e.g. joe@outlook.com" style="text-align: center; width: 60%">
+                        </label>
+                    </div>
+                    <div id="flight-origin-container" style="text-align: center; margin-bottom: 30px">
+                        <p>Phone Number</p>
+                        <label>
+                            <input id="flight-origin-input" class="flight-location-input" type="text" name="passenger-phone" placeholder="e.g. 0400 111 222" style="text-align: center; margin-bottom: 10px">
+                        </label>
+                    </div>
+                </div>
+        </div>
+        <div id="flight-booking-container" style="width: 40%; text-align: center; margin: auto">
+                <div id="flight-booking-input-container" style="display: block; background: white; border-radius: 5px; border: solid #3FB7EA;">
+                    <h1>Payment Details</h1>
+                    <div id="flight-origin-container" style="text-align: center; margin-bottom: 30px">
+                        <p>Card Number</p>
+                        <label>
+                            <input id="flight-origin-input" class="flight-location-input" type="number" name="card-number" maxlength="16" placeholder="e.g. 1111 2222 3333 4444" style="text-align: center">
+                        </label>
+                    </div>
+                    <div id="flight-origin-container" style="text-align: center; margin-bottom: 30px">
+                        <p>Expiration Date</p>
+                        <label>
+                            <input id="flight-origin-input" class="flight-location-input" type="month" name="card-expiration" style="text-align: center; width: 60%">
+                        </label>
+                    </div>
+                    <div id="flight-origin-container" style="text-align: center; margin-bottom: 30px">
+                        <p>Security Number</p>
+                        <label>
+                            <input id="flight-origin-input" class="flight-location-input" type="number" name="card-security-number" placeholder="e.g. 123" maxlength="3" style="text-align: center; width: 35%">
+                        </label>
+                    </div>
+                    <div id="flight-origin-container" style="text-align: center; margin-bottom: 30px">
+                        <button class="select-flight-button" type="submit" style="margin: auto">Confirm Purchase</button>
+                    </div>
+                </div>
+        </div>
+    </form>
+    <script src="{% static "store/js/index.js" %}"></script>
+</body>
+</html>
