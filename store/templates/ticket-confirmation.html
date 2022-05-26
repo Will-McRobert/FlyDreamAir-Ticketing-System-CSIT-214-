@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Confirmation</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "store/css/main.css" %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>{% load static %}
+                    <img src="{% static "store/img/FlyDreamAir.png" %}" alt="FlyDreamAir Logo" style="height: 50px;">
+                </li>
+                <li><a href="/">Book</a></li>
+                <li><a href="#">News</a></li>`
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+        <div id="flight-booking-container" style="width: 60%; text-align: center; margin: auto">
+            <div style="text-align: center; margin:auto">
+                <h1 style="margin-bottom: 50px">Thanks for flying with FlyDreamAir!</h1>
+            </div>
+            <div style="text-align: center; margin:auto">
+                <h2 style="margin-bottom: 10px">Order Confirmation</h2>
+            </div>
+            <div id="flight-booking-input-container" style="display: block; background: white; border-radius: 5px; border: solid #3FB7EA; font-size: 18px">
+                <h2 style="margin-bottom: 20px">Flight</h2>
+                <p>Flight from {{ selected_flight.origin_airport.name }} ({{ selected_flight.departure_date_time | date:"d-m-Y H:i" }})
+                    to {{ selected_flight.destination_airport.name }} ({{ selected_flight.arrival_date_time | date:"d-m-Y H:i" }}) - {{ selected_flight.aircraft }}</p>
+                <h2 style="margin-top: 20px">Seat</h2>
+                <p>{{ selected_flight.aircraft.name }} Row {{ selected_seat.aircraft_seat.row.code }}, Seat {{ selected_seat.aircraft_seat.code }} - ${{ selected_seat.price }}</p>
+                <h2 style="margin-top: 20px">Additional Services</h2>
+                <p>N/A</p>
+                <h2 style="margin-top: 20px">Passenger Details</h2>
+                <p style="margin-top: 10px">Name: {{ passenger.passenger_name }}</p>
+                <p style="margin-top: 10px">Email: {{ passenger.passenger_email }}</p>
+                <p style="margin-top: 10px">Phone: {{ passenger.passenger_phone }}</p>
+                <h2 style="margin-top: 20px">Payment</h2>
+                <p style="margin-top: 10px">Payment Type: Credit Card</p>
+                <p style="margin-top: 10px">Card Number: 1111 **** **** ****</p>
+                <p style="margin-top: 10px">Payment Status: Successful</p>
+                <h3 style="margin-top: 20px">Total Cost: ${{ selected_seat.price }}</h3>
+                <p style="margin-top: 50px; margin-bottom: 10px">An email has been sent to {{ passenger.passenger_email }} containing your ticket details. Enjoy your flight!</p>
+            </div>
+            <a href="/">
+                <button class="select-flight-button" style="margin: 20px auto;">Go to Homepage</button>
+            </a>
+        </div>
